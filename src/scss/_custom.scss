@@ -1,0 +1,110 @@
+$theme-colors: (
+  "primary": #d4153b,
+  "danger": #a00b2a,
+  "secondary": #412D61,
+  "pinky": #C2A8ED,
+  "light": #AEA7B6,
+  "dark": #171A30,
+  "darky": #1f213f,
+);
+@import "~bootstrap/scss/functions";
+$body-bg: theme-color("dark");
+$body-color: #fff;
+$border-radius: 1rem;
+$headings-font-family: 'Exo 2';
+$font-family-base: 'PT Sans';
+$font-size-base: 1.6rem;
+$container-max-widths:(
+  sm: 540px,
+  md: 720px,
+  lg: 1280px,
+  xl: 1700px
+);
+$background: theme-color('primary');
+$border: theme-color('primary');
+$headings-font-weight: 700;
+$btn-change: "lighten";
+$btn-border-radius: 10rem;
+$btn-border-radius-lg: 10rem;
+$btn-font-size: 1.4rem;
+$btn-padding-y: 1rem;
+$btn-padding-x: 4rem;
+$btn-focus-width: 1rem;
+$link-hover-color: lighten(theme-color('primary'), 15%);
+$link-hover-decoration: none;
+$link-color: theme-color('primary');
+$headings-margin-bottom: 2rem;
+$card-border-radius: $border-radius;
+$card-bg: theme-color('darky');
+$card-spacer-x: 4rem;
+$modal-inner-padding: 4rem;
+$modal-content-border-radius: 0.5rem;
+$form-group-margin-bottom: 2rem;
+$modal-title-margin-bottom: 2rem;
+$input-height: 5.5rem;
+$h1-font-size: 4.8rem;
+$h2-font-size: 3.2rem;
+$h3-font-size: 2.4rem;
+$h4-font-size: 1.8rem;
+$h5-font-size: 1.4rem;
+$h6-font-size: 1.2rem;
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+//@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/input-group";
+.input-group > .input-group-prepend > .btn,
+.input-group > .input-group-prepend > .input-group-text,
+.input-group > .input-group-append:not(:last-child) > .btn,
+.input-group > .input-group-append:not(:last-child) > .input-group-text,
+.input-group > .input-group-append:last-child > .btn:not(:last-child):not(.dropdown-toggle),
+.input-group > .input-group-append:last-child > .input-group-text:not(:last-child),
+.input-group > .form-control:not(:last-child), .input-group > .custom-select:not(:last-child){
+  @include border-right-radius(10rem);
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child){
+  @include border-left-radius(10rem);
+}
+
+.input-group{
+  display: flex;
+  align-items: center;
+}
+.input-group-append{
+  position: absolute;
+  right: 1rem;
+  z-index: 3;
+}
+.container {
+  @include make-container($gutter: 16rem);
+  @include make-container-max-widths();
+}
+@import "~bootstrap/scss/custom-forms";
+@import "~bootstrap/scss/breadcrumb";
+@import "~bootstrap/scss/pagination";
+@import "~bootstrap/scss/alert";
+@import "~bootstrap/scss/progress";
+@import "~bootstrap/scss/media";
+@import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/tooltip";
+@import "~bootstrap/scss/popover";
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/card";

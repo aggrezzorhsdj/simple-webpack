@@ -1,0 +1,44 @@
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+@mixin translate-border($x, $y) {
+  transform: translate($x, $y);
+}
+
+@mixin headings($from, $to, $base-font-size, $heading-scale) {
+  @for $i from $from through $to {
+    h#{$i} {
+      font-size: $base-font-size + $heading-scale * (6 - $i);
+    }
+    .h#{$i} {
+      font-size: $base-font-size + $heading-scale * (6 - $i);
+    }
+  }
+}
+@mixin border($thick, $layer, $color) {
+  border: $thick $layer, $color;
+}
+
+@mixin paragraph($from, $to, $base-font-size, $heading-scale){
+  @for $i from $from through $to {
+    &.p#{$i} {
+      font-size: $base-font-size + $heading-scale * ($i);
+    }
+  }
+}
+@mixin beforeAfter($isAbsolute, $display: block, $top:0, $bottom:0){
+  @each $el in (before, after){
+    &::#{$el}{
+      @if $isAbsolute == 1 {
+        position: absolute;
+        top: $top;
+        bottom: $bottom;
+        left: 0;
+        right: 0;
+      }
+      content: '';
+      display: $display;
+    }
+  }
+}

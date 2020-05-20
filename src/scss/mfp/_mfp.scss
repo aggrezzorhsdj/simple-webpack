@@ -1,0 +1,106 @@
+@import "~magnific-popup/src/css/settings";
+@import "variables";
+@import "../variables";
+@import "~magnific-popup/src/css/main";
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+.mfp{
+  &-wrap, &-bg{
+    z-index: $mfp-z-index-base;
+    @include background-opacity(theme-color('light'), 0.4);
+    backdrop-filter: blur(0.8rem);
+  }
+  &-bottom-bar{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    top: auto;
+    bottom: $mfp-image-padding-bottom + 20;
+  }
+  &-title{
+    font-family: $mfp-title-font-family;
+    font-size: $mfp-title-font-size;
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    max-width: 70%;
+    border-radius: 10rem;
+    line-height: 1.5;
+    margin-bottom: $margin-bottom-default;
+    @include background-opacity(theme-color("dark"), 0.8)
+  }
+  &-counter{
+    position: relative;
+    font-family: 'PT Sans', sans-serif, Calibri;
+
+  }
+  &-image-holder &-close {
+    cursor: pointer;
+    transition: $transition;
+    position: absolute;
+    width: $mfp-btn-width;
+    height: $mfp-btn-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: theme-color("primary");
+    border-radius: 50%;
+    top: $mfp-btn-height / 2;
+    right: - $mfp-btn-width / 2;
+  }
+  &-figure{
+    line-height: 1.5;
+  }
+
+}
+button.mfp-arrow{
+  &::before, &::after{
+    content: none;
+  }
+  transition: $transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: theme-color("primary");
+  padding: 1rem;
+  width: $mfp-arrow-width;
+  height: $mfp-arrow-height;
+  > svg {
+    width: $mfp-arrow-width / 2;
+    height: $mfp-arrow-width / 2;
+  }
+  &-left{
+    transform: translateX(-$mfp-arrow-width / 2);
+    > svg {
+      transform: rotate(-180deg);
+    }
+  }
+  &-right{
+    transform: translateX($mfp-arrow-width / 2);
+  }
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all $transition ease-out;
+  -moz-transition: all $transition ease-out;
+  -o-transition: all $transition ease-out;
+  transition: all $transition ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}

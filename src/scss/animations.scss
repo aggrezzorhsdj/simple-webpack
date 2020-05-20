@@ -1,0 +1,32 @@
+@import "variables";
+$blur: 30rem;
+$size: 30rem;
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 $primary-color;
+    box-shadow: 0 0 0 0 $primary-color;
+  }
+  70% {
+    -moz-box-shadow: 0 0 $blur $size $primary-color;
+    box-shadow: 0 0 $blur $size $primary-color;
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+    box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+  }
+}
+
+@keyframes text-pulse {
+  0% {
+    text-shadow: 0 0 0;
+  }
+  70% {
+    text-shadow: 0 0 6rem;
+  }
+  100% {
+    text-shadow: 0 0 0;
+  }
+}
+.textPulse{
+  animation: text-pulse $animation-time infinite;
+}

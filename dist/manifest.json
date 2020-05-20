@@ -1,0 +1,11 @@
+{
+  "bootstrap.js": "sites/s1/frontend/dist/js/bootstrap.min.js",
+  "dom7.js": "sites/s1/frontend/dist/js/dom7.min.js",
+  "jquery.inputmask.js": "sites/s1/frontend/dist/js/jquery.inputmask.min.js",
+  "jquery.js": "sites/s1/frontend/dist/js/jquery.min.js",
+  "magnific-popup.js": "sites/s1/frontend/dist/js/magnific-popup.min.js",
+  "main.css": "sites/s1/frontend/dist/css/main.min.css",
+  "main.js": "sites/s1/frontend/dist/js/main.min.js",
+  "popper.js.js": "sites/s1/frontend/dist/js/popper.js.min.js",
+  "swiper.js": "sites/s1/frontend/dist/js/swiper.min.js"
+}
