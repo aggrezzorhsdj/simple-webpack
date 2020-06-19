@@ -49,10 +49,14 @@
     margin-bottom: 4rem;
   }
   .input-group-append{
-    & .icon{
-      display: inline-block;
+    .icon{
+      display: flex;
+      align-items: center;
     }
-    & span{
+    .btn{
+      padding: $btn-padding-y / 2 $btn-padding-x;
+    }
+    span{
       display: none;
     }
   }

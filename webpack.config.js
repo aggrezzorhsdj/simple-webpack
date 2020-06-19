@@ -21,10 +21,10 @@ module.exports = (env, options) => {
             path: __dirname + '/dist',
             publicPath: 'sites/s1/frontend/dist/',
             chunkFilename: options.mode === 'production'
-                ? 'js/[name].min.js'
+                ? 'js/[name].[contenthash:8].min.js'
                 : 'js/[name].[contenthash:8].js',
             filename: options.mode === 'production'
-                ? 'js/[name].min.js'
+                ? 'js/[name].[contenthash:8].min.js'
                 : 'js/[name].[contenthash:8].js'
         },
         optimization: {
@@ -132,7 +132,7 @@ module.exports = (env, options) => {
                             : `images/${url}`
                     },
                     name: options.mode === 'production'
-                        ? '[name].[ext]'
+                        ? '[name].[contenthash:8].[ext]'
                         : '[name].[contenthash:8].[ext]',
                 },
             }]
@@ -152,10 +152,10 @@ module.exports = (env, options) => {
                 path: __dirname + '/dist/css/',
                 publicPath:'sites/s1/frontend/dist/css/',
                 chunkFilename: options.mode === 'production'
-                    ? 'css/[name].min.css'
+                    ? 'css/[name].[contenthash:8].min.css'
                     : 'css/[name].[contenthash:8].css',
                 filename: options.mode === 'production'
-                    ? 'css/[name].min.css'
+                    ? 'css/[name].[contenthash:8].min.css'
                     : 'css/[name].[contenthash:8].css',
             }),
             new CopyWebpackPlugin([{
@@ -163,6 +163,7 @@ module.exports = (env, options) => {
                 to: path.resolve(__dirname, 'dist'),
             }]),
             new ImageminPlugin({
+                test: /\.(jpe?g|png|gif)$/i,
                 pngquant: '65-70',
                 disable: options.mode !== 'production',
                 plugins: [imageminMozjpeg({quality: 50})]

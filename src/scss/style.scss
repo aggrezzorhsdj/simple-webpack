@@ -17,6 +17,7 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: theme-color("primary");
+  border-radius: $border-radius;
 }
 html{
   font-size: $html-font-size;
@@ -46,6 +47,7 @@ li{
   list-style: none;
 }
 /*End of General Elements*/
+
 /*Header*/
 .header{
   display: block;
@@ -168,6 +170,46 @@ li{
   }
 }
 /*End of Nav*/
+/*Contact flow*/
+.contact-flow{
+  display: none;
+  justify-content: flex-end;
+  &__item{
+    padding: 0 $grid-gutter-width / 2;
+    > a {
+      display: flex;
+      align-items: center;
+      color: #fff;
+      padding: 0.5rem 0;
+      font-weight: 500;
+      &:hover{
+        color: $link-hover-color;
+      }
+    }
+  }
+}
+@media(min-width: 992px){
+  .contact-flow{
+    display: flex;
+  }
+}
+/*End of Contact flow*/
+/*Icons*/
+.icon{
+  width: $icon-default-w;
+  height: $icon-default-h;
+  padding: 0 1rem;
+  transition: $transition;
+  &_light{
+    fill: #fff;
+  }
+}
+a:hover{
+  .icon{
+    fill: $link-hover-color;
+  }
+}
+/*End of Icons*/
 /*Home block*/
 #home{
   padding: $home-padding-y $home-padding-x;
@@ -927,5 +969,10 @@ li{
   top: auto !important;
   right: 5% !important;
   transform: scale(1.2) !important;
+}
+@media (max-width: 768px) {
+  .ws-chat.ws-chat-mobile.left .ws-chat-invitation-container {
+    right: 0 !important;
+  }
 }
 /*End of Callback*/

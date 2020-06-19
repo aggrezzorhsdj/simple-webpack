@@ -1,16 +1,16 @@
-// import AOS from "aos";
 
 import "lazyload";
 import SmoothScroll from "smooth-scroll";
 import $ from "jquery";
 import Swiper from "swiper";
-import 'jquery.inputmask';
 import 'inputmask.phone.extensions';
 import "inputmask.phone-codes-ru";
 import {CustomTabs} from './customTabs';
 import './credits';
+
 let im = new Inputmask('phoneru');
 im.mask($('input[type="tel"]'));
+
 $(document).ajaxStop(function () {
     let im = new Inputmask('phoneru');
     im.mask($('input[type="tel"]'));

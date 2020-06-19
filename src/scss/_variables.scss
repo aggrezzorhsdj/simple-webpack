@@ -1,5 +1,6 @@
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+
 $z-index-default: 1025;
 $fa-font-path: '~$fortawesome/fontawesome-free/webfonts';
 $item-padding: 2rem;
@@ -64,8 +65,8 @@ $msproducts-price-padd-x: $padding-default-x * 3;
 $msproducts-price-padd-y: $padding-default-y;
 $msproducts-row-padding-y: 0;
 $msproducts-row-padding-x: $padding-default-x * 2;
-$catalog-padding-y:0;
-$catalog-padding-x:6rem;
+$catalog-padding-y: 0;
+$catalog-padding-x: 6rem;
 $msproducts-row-margin-bottom: $margin-bottom-default * 5;
 $check-icon-w: 2rem;
 $check-icon-h: 2.1rem;
@@ -73,3 +74,6 @@ $check-icon-margin-r: 0.5rem;
 $check-li-margin-b: 1rem;
 $title-first-margin-b: 4rem;
 $msproducts-item-margin-bottom: $margin-bottom-default;
+
+$icon-default-w: 3.5rem;
+$icon-default-h: 3.5rem;
